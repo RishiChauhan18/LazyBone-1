@@ -1,0 +1,51 @@
+{
+  "project_info": {
+    "project_id": "lazybone-437a9",
+    "project_number": "237690362308",
+    "name": "LazyBone"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:237690362308:android:661b0482e2b549ba",
+        "client_id": "android:in.edu.bml.cse.semester3.lazybone",
+        "client_type": 1,
+        "android_client_info": {
+          "package_name": "in.edu.bml.cse.semester3.lazybone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "237690362308-g772ivok1aq2a2ceom2239an7khfuc0u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "in.edu.bml.cse.semester3.lazybone",
+            "certificate_hash": "5B732B54DF743FBBD13B4AD0065079662CD16006"
+          }
+        }
+      ],
+      "api_key": [],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "cloud_messaging_service": {
+          "status": 2,
+          "apns_config": []
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "google_signin_service": {
+          "status": 2
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "client_info": [],
+  "ARTIFACT_VERSION": "1"
+}
