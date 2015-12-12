@@ -34,7 +34,7 @@ public class LogIn extends AppCompatActivity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_in);
         Intent intent = getIntent();
-        mStatusTextView = (TextView) findViewById(R.id.status);
+       // mStatusTextView = (TextView) findViewById(R.id.status);
         //Log.d("In Login", "In Login");
         // Configure sign-in to request the user's ID, email address, and basic
         // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
@@ -47,9 +47,46 @@ public class LogIn extends AppCompatActivity implements
                 .enableAutoManage(this /* FragmentActivity */, this /* OnConnectionFailedListener */)
                 .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
                 .build();
+        // [START customize_button]
+        // Customize sign-in button. The sign-in button can be displayed in
+        // multiple sizes and color schemes. It can also be contextually
+        // rendered based on the requested scopes. For example. a red button may
+        // be displayed when Google+ scopes are requested, but a white button
+        // may be displayed when only basic profile is requested. Try adding the
+        // Scopes.PLUS_LOGIN scope to the GoogleSignInOptions to see the
+        // difference.
+        SignInButton signInButton = (SignInButton) findViewById(R.id.sign_in_button);
+        signInButton.setSize(SignInButton.SIZE_STANDARD);
+        signInButton.setScopes(gso.getScopeArray());
+        // [END customize_button]
         findViewById(R.id.sign_in_button).setOnClickListener(this);
 
 
+    }
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        OptionalPendingResult<GoogleSignInResult> opr = Auth.GoogleSignInApi.silentSignIn(mGoogleApiClient);
+        if (opr.isDone()) {
+            // If the user's cached credentials are valid, the OptionalPendingResult will be "done"
+            // and the GoogleSignInResult will be available instantly.
+            Log.d(TAG, "Got cached sign-in");
+            GoogleSignInResult result = opr.get();
+            handleSignInResult(result);
+        } else {
+            // If the user has not previously signed in on this device or the sign-in has expired,
+            // this asynchronous branch will attempt to sign in the user silently.  Cross-device
+            // single sign-on will occur in this branch.
+            showProgressDialog();
+            opr.setResultCallback(new ResultCallback<GoogleSignInResult>() {
+                @Override
+                public void onResult(GoogleSignInResult googleSignInResult) {
+                    hideProgressDialog();
+                    handleSignInResult(googleSignInResult);
+                }
+            });
+        }
     }
 
     @Override
@@ -85,7 +122,9 @@ public class LogIn extends AppCompatActivity implements
             Log.d("ACCOUNT",personName);
             Log.d("ACCOUNT",personEmail);
             Log.d("ACCOUNT",personId);
-            mStatusTextView.setText(getString(R.string.signed_in_fmt, acct.getDisplayName()));
+            Intent intent1 = new Intent(getApplicationContext(),OrderOrPickup.class);
+            startActivity(intent1);
+            //mStatusTextView.setText(getString(R.string.signed_in_fmt, acct.getDisplayName()));
             updateUI(true);
         } else {
             // Signed out, show unauthenticated UI.
