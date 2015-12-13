@@ -7,4 +7,27 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="in.edu.bml.cse.semester3.lazybone.OrderActivity">
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RAO"
+        android:id="@+id/RAO"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MUSKAAN"
+        android:id="@+id/muskaan"
+        android:layout_below="@+id/RAO"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Adda"
+        android:id="@+id/Adda"
+        android:layout_centerVertical="true"
+        android:layout_alignEnd="@+id/RAO" />
 </RelativeLayout>
