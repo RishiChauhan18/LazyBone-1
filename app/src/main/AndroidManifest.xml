@@ -34,6 +34,12 @@
         </activity>
         <activity android:name=".OrderOrPickup" >
         </activity>
+        <activity android:name=".OrderActivity" >
+        </activity>
+        <activity android:name=".PickUpActivity" >
+        </activity>
+        <activity android:name=".Rao_order" >
+        </activity>
     </application>
 
 </manifest>

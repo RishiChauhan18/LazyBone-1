@@ -122,7 +122,14 @@ public class LogIn extends AppCompatActivity implements
             Log.d("ACCOUNT",personName);
             Log.d("ACCOUNT",personEmail);
             Log.d("ACCOUNT",personId);
+            //This is hacky shit.
+            String[] info = new String[3];
+            info[0] = personName;
+            info[1] = personEmail;
+            info[2] =personId;
+
             Intent intent1 = new Intent(getApplicationContext(),OrderOrPickup.class);
+            intent1.putExtra("Info",info);
             startActivity(intent1);
             //mStatusTextView.setText(getString(R.string.signed_in_fmt, acct.getDisplayName()));
             updateUI(true);
