@@ -21,4 +21,14 @@
     <string name="copyright"> 2015 Lazy Bones</string>
     <string name="rights">All Rights Reserved</string>
     <string name="image">ic_launcher.png</string>
+    <string name="ItemName">Item name</string>
+    <string-array name="Items">
+        <item>Naan </item>
+        <item>Paneer Parantha</item>
+        <item>Butter Roti</item>
+        <item>Shahi Paneer</item>
+    </string-array>
+    <string name="dialog_message">Enter Amount</string>
+    <string name="ok">OK</string>
+    <string name="cancel">CANCEL</string>
 </resources>
