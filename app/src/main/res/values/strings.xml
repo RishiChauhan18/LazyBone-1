@@ -15,7 +15,10 @@
     <string name="error_incorrect_password">This password is incorrect</string>
     <string name="error_field_required">This field is required</string>
     <string name="permission_rationale">"Contacts permissions are needed for providing email
-        completions."
-    </string>
-    <string name="signed_in_fmt" />
+        completions."</string>
+    <string name="about1">Lazy Bones</string>
+    <string name="version_detail">Version: Beta</string>
+    <string name="copyright"> 2015 Lazy Bones</string>
+    <string name="rights">All Rights Reserved</string>
+    <string name="image">ic_launcher.png</string>
 </resources>
