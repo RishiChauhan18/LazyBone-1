@@ -4,7 +4,7 @@
 import com.google.android.gms.common.api.GoogleApiClient;
 
 public class GoogleApiClient_Singleton {
-        private  static final String TAG = "Nigger";
+
         private static GoogleApiClient_Singleton instance = null;
         private static GoogleApiClient mGoogleApiClient = null;
          public static GoogleApiClient_Singleton getInstance(GoogleApiClient aGoogleApiClient) {
